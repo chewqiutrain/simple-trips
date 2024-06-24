@@ -12,7 +12,8 @@ pipeline {
                 echo "is this a branch? : ${env.GIT_BRANCH}"
                 echo "try this: ${env.BRANCH_NAME}"
                 echo "how about: ${BRANCH_NAME}"
-                npm run lint
+                ls  -lah
+                sh -c 'npm run lint'
             }
         }
         stage('Build') {
