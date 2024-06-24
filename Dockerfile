@@ -6,4 +6,4 @@ COPY . /app/
 
 RUN npm install 
 
-RUN which next
+RUN npm -g install next
