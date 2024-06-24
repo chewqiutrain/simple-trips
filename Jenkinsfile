@@ -6,21 +6,22 @@ pipeline {
         }
     }
     stages {
-        stage('Build') {
+        stage('Lint') {
             steps {
                 echo "Building branch: ${GIT_BRANCH}"
                 echo "is this a branch? : ${env.GIT_BRANCH}"
                 echo "try this: ${env.BRANCH_NAME}"
                 echo "how about: ${BRANCH_NAME}"
-
+                npm run lint
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
                 echo 'Testing..'
                 echo "env.BRANCH_NAME: ${env.BRANCH_NAME}"
                 echo "env.CHANGE_ID: ${env.CHANGE_ID}"
                 echo ""
+                // npm run build
             }
         }
         stage('Deploy') {
