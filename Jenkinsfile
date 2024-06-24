@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building branch: ${GIT_BRANCH}'
             }
         }
         stage('Test') {
