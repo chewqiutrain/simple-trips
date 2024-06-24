@@ -1,6 +1,6 @@
 import Image from "next/image";
 import MyTable from "@/app/my_table";
-import { TableUsingGrid, MyHorzDivider, MyVertDivider, MyBar } from "@/app/my_table";
+import { TableUsingGrid, MyHorzDivider, MyVertDivider, MyBar, MockHistogram, MyBarWithLegend, MockHistogramWithX } from "@/app/my_table";
 import { NavButtform } from "./ui/nav-links";
 
 export default function Home() {
@@ -24,22 +24,15 @@ export default function Home() {
       <MyHorzDivider/>
       <div className="flex flex-row bg-orange-200 min-w-full min-h-screen max-h-screen p-8  ">
         <div className="flex flex-row bg-orange-500 w-1/2 min-h-24 max-h-screen p-8 justify-left space-x-2 items-end rounded-md">
-          <MyBar h={4}/>
-          <MyBar h={8}/>
-          <MyBar h={80}/>
-          <MyBar h={32}/>
-          <MyBar h={36}/>
-          <MyBar h={96}/>
+          <MyBar height="55%"/>
+          <MyBar height="20%"/>
+          <MyBarWithLegend legend="2025-01-02" height="25%"/>
+          {/* <MyBar h={32}/>
+          <MyBar h={64}/>
+          <MyBar h={96}/> */}
         </div>
         <div className="bg-black min-h-full w-32"></div>
-        {/* <div className="flex flex-row bg-orange-500 w-1/2 min-h-24 max-h-screen p-8 justify-left space-x-2 items-end">
-          <MyBar h={4}/>
-          <MyBar h={8}/>
-          <MyBar h={40}/>
-          <MyBar h={32}/>
-          <MyBar h={64}/>
-          <MyBar h={96}/>
-        </div> */}
+        <MockHistogramWithX/>
       </div>
     </main>
   );
