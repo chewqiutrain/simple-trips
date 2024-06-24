@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                echo ${env.BRANCH_NAME}
+                echo "${env.BRANCH_NAME}"
                 echo $CHANGE_ID
             }
         }
