@@ -12,7 +12,7 @@ pipeline {
                 echo "is this a branch? : ${env.GIT_BRANCH}"
                 echo "try this: ${env.BRANCH_NAME}"
                 echo "how about: ${BRANCH_NAME}"
-                ls  -lah
+                sh 'ls -lah'
                 sh 'npm run lint'
             }
         }
