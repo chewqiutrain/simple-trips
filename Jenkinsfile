@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building branch: ${GIT_BRANCH}'
-                echo 'is this a branch? : ${env.BRANCH}'
+                echo 'is this a branch? : ${env.GIT_BRANCH}'
             }
         }
         stage('Test') {
