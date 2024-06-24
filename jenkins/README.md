@@ -15,6 +15,7 @@ docker run \
 
 docker build -t myjenkins:2.440.2-1 .
 
+huh
 
 docker run \
   --name jenkins-blueocean \

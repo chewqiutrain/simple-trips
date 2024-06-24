@@ -27,6 +27,7 @@ function Row({ rowVals, key}: { rowVals: any[], key: string}) {
     console.log(typeof rowVals);
     return (
         <div className="flex bg-orange-400 flex-row space-x-5 justify-between rounded-md" key={key}>
+            {/* eslint-disable-next-line */}
             {rowVals.map((v) => <Cell val={v}/>)}
         </div>
     )
@@ -107,6 +108,7 @@ export function MockHistogram() {
     return (
         <div className="flex flex-row bg-orange-500 w-1/2 min-h-24 max-h-screen p-8 justify-left space-x-2 items-end rounded-md">
             {mockDf.salesPositive.map((salesP) => {
+                // eslint-disable-next-line
                 return <MyBar height={`${salesP.toString()}%`}/>
             }
             )}
@@ -125,7 +127,7 @@ export function MockHistogramWithX() {
                 df.map((x) => {
                     legend = x[0];
                     v = x[1];
-                    
+                    // eslint-disable-next-line
                     return <MyBarWithLegend legend={legend} height={`${v}%`} />
                 })
             }
