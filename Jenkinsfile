@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        dockerfile {
+            filename 'Dockerfile'
+            reuseNode true
+        }
+    }
     stages {
         stage('Build') {
             steps {
@@ -7,6 +12,7 @@ pipeline {
                 echo "is this a branch? : ${env.GIT_BRANCH}"
                 echo "try this: ${env.BRANCH_NAME}"
                 echo "how about: ${BRANCH_NAME}"
+
             }
         }
         stage('Test') {
@@ -14,6 +20,7 @@ pipeline {
                 echo 'Testing..'
                 echo "env.BRANCH_NAME: ${env.BRANCH_NAME}"
                 echo "env.CHANGE_ID: ${env.CHANGE_ID}"
+                echo ""
             }
         }
         stage('Deploy') {
