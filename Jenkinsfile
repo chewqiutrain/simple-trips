@@ -13,7 +13,7 @@ pipeline {
                 echo "try this: ${env.BRANCH_NAME}"
                 echo "how about: ${BRANCH_NAME}"
                 ls  -lah
-                sh -c 'npm run lint'
+                sh 'npm run lint'
             }
         }
         stage('Build') {
