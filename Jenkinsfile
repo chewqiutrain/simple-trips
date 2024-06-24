@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo 'Building branch: ${GIT_BRANCH}'
                 echo 'is this a branch? : ${env.GIT_BRANCH}'
+                echo 'try this: ${env.BRANCH_NAME}'
             }
         }
         stage('Test') {
