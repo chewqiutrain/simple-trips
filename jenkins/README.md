@@ -15,14 +15,6 @@ docker run \
 
 docker build -t myjenkins:2.440.2-1 .
 
-adc2cd82c15d454a8af84ff663206729
-admin
-Test!@#$
-
-
-https://d9dd-2406-3003-2077-14eb-6421-e85c-6b63-1ca6.ngrok-free.app/
-
-GH APPID: 928771
 
 docker run \
   --name jenkins-blueocean \
