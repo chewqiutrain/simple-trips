@@ -12,6 +12,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                echo $BRANCH_NAME 
+                echo $CHANGE_ID
             }
         }
         stage('Deploy') {
