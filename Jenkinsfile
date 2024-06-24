@@ -13,7 +13,6 @@ pipeline {
                 echo "try this: ${env.BRANCH_NAME}"
                 echo "how about: ${BRANCH_NAME}"
                 sh 'ls -lah'
-                sh 'npm i next'
                 sh 'npm run lint'
             }
         }
