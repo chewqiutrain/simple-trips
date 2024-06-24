@@ -14,6 +14,7 @@ pipeline {
                 echo 'Testing..'
                 echo "env.BRANCH_NAME: ${env.BRANCH_NAME}"
                 echo "env.CHANGE_ID: ${env.CHANGE_ID}"
+                echo ${env.CHangeid}
             }
         }
         stage('Deploy') {
