@@ -1,4 +1,5 @@
 import { generate } from "random-words"
+import { mockDf, MockDfTuples } from "./lib/data";
 
 function getTableData(nrow: number, ncol: number){
     let table = Array();
@@ -80,11 +81,54 @@ export function MyVertDivider({ w=8 }: { w?: number }) {
     )
 }
 
-export function MyBar({ h }: { h: number }) {
-    const nh = h.toString();
+export function MyBar({ height }: { height: string }) {
     return (
-        <div key={`my-bar-h-${h}`} className={`bg-purple-500 h-${nh} w-12 rounded-md text-xs items-center flex place-content-center`}>
-            <span className="text-xs">h={h}</span>
+        <div key={`my-bar-h-${height}`} className={`bg-purple-500 w-12 rounded-md text-xs items-center flex place-content-center`} style={{ height }}>
+            <span className="text-xs">h={height}</span>
         </div>
     )
+}
+export const GLOBAL_DEBUG = false;
+
+export function  MyBarWithLegend({ legend, height}:{ legend: string, height: string}){
+    const debugBackgroundY = GLOBAL_DEBUG ? "bg-purple-200" : ""
+    const debugBackgroundX = GLOBAL_DEBUG ? "bg-purple-300" : ""
+    return (
+        <div className={`flex flex-col-reverse ${debugBackgroundY} w-12 h-full items-end`}>
+            <div className={`flex flex-col w-12 ${debugBackgroundX} -rotate-45 items-end place-items-center`}>
+                <span className="text-xs text-black" style={{writingMode: 'vertical-lr'}}>{legend}</span>
+            </div>
+            <MyBar height={height}/>
+        </div>
+    )
+}
+
+export function MockHistogram() {
+    return (
+        <div className="flex flex-row bg-orange-500 w-1/2 min-h-24 max-h-screen p-8 justify-left space-x-2 items-end rounded-md">
+            {mockDf.salesPositive.map((salesP) => {
+                return <MyBar height={`${salesP.toString()}%`}/>
+            }
+            )}
+        </div>
+    )   
+}
+
+export function MockHistogramWithX() {
+    const df = MockDfTuples();
+    console.log(typeof df);
+    let legend: string;
+    let v: string;
+    return (
+        <div className="flex flex-row bg-orange-500 w-1/2 min-h-24 max-h-screen p-8 justify-left space-x-2 items-end rounded-md">
+            {
+                df.map((x) => {
+                    legend = x[0];
+                    v = x[1];
+                    
+                    return <MyBarWithLegend legend={legend} height={`${v}%`} />
+                })
+            }
+        </div>
+    )       
 }
