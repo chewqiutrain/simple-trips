@@ -127,7 +127,7 @@ export function MockHistogramWithX() {
                 df.map((x) => {
                     legend = x[0];
                     v = x[1];
-                    
+                    // eslint-disable-next-line
                     return <MyBarWithLegend legend={legend} height={`${v}%`} />
                 })
             }
