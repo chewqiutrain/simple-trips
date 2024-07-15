@@ -8,6 +8,7 @@ pipeline {
                 
                 echo "params.MY_TAG:  ${params.MY_TAG}"
                 echo "env.BRANCH_NAME: ${env.BRANCH_NAME}"
+                sh 'git log -2'
 
                 echo "try this: ${env.BRANCH_NAME}"
                 // echo "how about: ${BRANCH_NAME}"
