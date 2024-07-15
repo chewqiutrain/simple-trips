@@ -1,10 +1,10 @@
 pipeline {
-    agent {
-        dockerfile {
-            filename 'Dockerfile'
-            reuseNode true
-        }
-    }
+    // agent {
+    //     dockerfile {
+    //         filename 'Dockerfile'
+    //         reuseNode true
+    //     }
+    // }
     stages {
         stage('Lint') {
             steps {
