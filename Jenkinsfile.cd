@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Testing..'
-                echo "params.MY_TAG: " ${params.MY_TAG}
+                echo "params.MY_TAG:  ${params.MY_TAG}"
                 echo "env.BRANCH_NAME: ${env.BRANCH_NAME}"
                 echo "env.CHANGE_ID: ${env.CHANGE_ID}"
                 echo ""
