@@ -5,6 +5,7 @@ pipeline {
     //         reuseNode true
     //     }
     // }
+    agent any
     stages {
         stage('Lint') {
             steps {
