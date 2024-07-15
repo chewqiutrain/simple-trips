@@ -30,4 +30,7 @@ docker run \
   --volume jenkins-data:/var/jenkins_home \
   --volume jenkins-docker-certs:/certs/client:ro \
   myjenkins:2.440.2-1
+
+ngrok http http://localhost:8080
+
 ```
