@@ -5,8 +5,12 @@ pipeline {
             steps {
                 echo "Building branch: ${GIT_BRANCH}"
                 echo "is this a branch? : ${env.GIT_BRANCH}"
+                
+                echo "params.MY_TAG:  ${params.MY_TAG}"
+                echo "env.BRANCH_NAME: ${env.BRANCH_NAME}"
+
                 echo "try this: ${env.BRANCH_NAME}"
-                echo "how about: ${BRANCH_NAME}"
+                // echo "how about: ${BRANCH_NAME}"
                 sh 'ls -lah'
                 sh 'npm run lint'
             }
